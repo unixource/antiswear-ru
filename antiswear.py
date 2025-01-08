@@ -1,4 +1,4 @@
-# https://github.com/unixource/antiswear-ru v.03 bugfix 
+# https://github.com/unixource/antiswear-ru v.04 bugfix 
 
 bpss = [
         ("iu", "ю"),
@@ -25,8 +25,8 @@ bpss = [
         ("_", "")
         ]
 
-prefixes = "хуе хуи хуй хую хуя пизд пезд блят бляд сук пидар пидор еб бзд долбаеб пидр педр хул".split()
-stdprefixes = "ни а о вы до за из изъ на недо надъ не о об объ от отъ по под подъ пере пре пред предъ при про раз рас разъ съ со су через черес чрез черезъ вз взъ довы".split()
+prefixes = "хуе хуи хуй хую хуя пизд пезд блят бляд сук пидар пидор еб бзд долбаеб пидр педр хул залуп".split()
+stdprefixes = "ни а о вы до за из изъ ис на недо надъ не о об объ от отъ по под подъ пере пре пред предъ при про раз рас разъ съ со су через черес чрез черезъ вз взъ довы".split()
 short = "бля нах".split()
 
 for p in prefixes.copy():
@@ -50,7 +50,7 @@ def check(text: str) -> bool:
         word = replaceBypasses(word)
         for prefix in prefixes:
             if (word.startswith(prefix) or
-                word in ["бля", "нах"]): return True
+                word in short): return True
     return False
         
 def test() -> None:
