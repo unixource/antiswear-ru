@@ -1,4 +1,4 @@
-# https://github.com/unixource/antiswear-ru v.04 bugfix 
+# https://github.com/unixource/antiswear-ru v.1 main 
 
 bpss = [
         ("iu", "ю"),
@@ -25,9 +25,14 @@ bpss = [
         ("_", "")
         ]
 
-prefixes = "хуе хуи хуй хую хуя пизд пезд блят бляд сук пидар пидор еб бзд долбаеб пидр педр хул залуп".split()
-stdprefixes = "ни а о вы до за из изъ ис на недо надъ не о об объ от отъ по под подъ пере пре пред предъ при про раз рас разъ съ со су через черес чрез черезъ вз взъ довы".split()
+prefixes = "хуе хуи хуй хую хуя пизд пезд блят бляд сук пидар пидор еб бзд долбаеб пидр педр хул залуп спизд спизж пизж".split()
+stdprefixes = "ни а о вы до за из изъ ис на недо надъ не о об объ от отъ по под подъ пере пре пред предъ при про раз рас разъ съ со су через черес чрез черезъ вз взъ довы без бес".split()
 short = "бля нах".split()
+
+list = stdprefixes.copy()
+for first in list:
+    for second in list:
+        stdprefixes.append(first+second)
 
 for p in prefixes.copy():
     for stdp in stdprefixes:
